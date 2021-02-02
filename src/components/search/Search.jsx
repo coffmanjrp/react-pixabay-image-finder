@@ -22,19 +22,23 @@ const Search = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await axios.get(
-        `${apiUrl}/?key=${apiKey}&q=${searchText}&image_type=photo&per_page=${amount}&safesearch=true`
-      );
-      const data = await res.data.hits;
+    if (searchText === '') {
+      setImages([]);
+    } else {
+      const fetchData = async () => {
+        const res = await axios.get(
+          `${apiUrl}/?key=${apiKey}&q=${searchText}&image_type=photo&per_page=${amount}&safesearch=true`
+        );
+        const data = await res.data.hits;
 
-      setImages(data);
-    };
+        setImages(data);
+      };
 
-    try {
-      fetchData();
-    } catch (error) {
-      console.log(error);
+      try {
+        fetchData();
+      } catch (error) {
+        console.log(error);
+      }
     }
   }, [searchText, amount]);
 
