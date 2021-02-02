@@ -60,9 +60,9 @@ const ImageResults = ({ images }) => {
   return (
     <>
       {imageListContent}
-      <Dialog open={open} onClose={handleClose}>
-        <DialogContent>
-          <img src={currentImg} alt="" style={{ width: '100%' }} />
+      <Dialog maxWidth="lg" open={open} onClose={handleClose}>
+        <DialogContent style={{ overflow: 'hidden' }}>
+          <img src={currentImg} alt="Large" style={{ width: '100%' }} />
         </DialogContent>
         <DialogActions>{actions}</DialogActions>
       </Dialog>
