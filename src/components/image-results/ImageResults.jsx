@@ -58,7 +58,7 @@ const ImageResults = ({ images }) => {
   ];
 
   return (
-    <div>
+    <>
       {imageListContent}
       <Dialog open={open} onClose={handleClose}>
         <DialogContent>
@@ -66,7 +66,7 @@ const ImageResults = ({ images }) => {
         </DialogContent>
         <DialogActions>{actions}</DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 };
 

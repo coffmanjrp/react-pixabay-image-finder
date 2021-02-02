@@ -40,33 +40,37 @@ const Search = () => {
         console.log(error);
       }
     }
+    // eslint-disable-next-line
   }, [searchText, amount]);
 
   return (
-    <div>
-      <TextField
-        name="searchText"
-        fullWidth={true}
-        label="Search For Images"
-        value={searchText}
-        onChange={onTextChange}
-      />
-      <TextField
-        name="amount"
-        select
-        fullWidth={true}
-        label="Amount"
-        value={amount}
-        onChange={onAmountChange}
-      >
-        {selectOptions.map((option) => (
-          <MenuItem key={option} value={option}>
-            {option}
-          </MenuItem>
-        ))}
-      </TextField>
+    <>
+      <div style={{ margin: '1.5rem 1rem' }}>
+        <TextField
+          name="searchText"
+          label="Search For Images"
+          value={searchText}
+          onChange={onTextChange}
+          style={{ marginBottom: '1rem', width: '100%' }}
+        />
+        <br />
+        <TextField
+          name="amount"
+          select
+          label="Amount"
+          value={amount}
+          onChange={onAmountChange}
+          style={{ width: '33.3%' }}
+        >
+          {selectOptions.map((option) => (
+            <MenuItem key={option} value={option}>
+              {option}
+            </MenuItem>
+          ))}
+        </TextField>
+      </div>
       {images.length > 0 && <ImageResults images={images} />}
-    </div>
+    </>
   );
 };
 
