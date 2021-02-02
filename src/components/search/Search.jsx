@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
+import ImageResults from '../image-results/ImageResults';
 
 const Search = () => {
   const [searchText, setSearchText] = useState('');
@@ -62,6 +61,7 @@ const Search = () => {
           </MenuItem>
         ))}
       </TextField>
+      {images.length > 0 && <ImageResults images={images} />}
     </div>
   );
 };
