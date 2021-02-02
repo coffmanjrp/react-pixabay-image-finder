@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 
 const Search = () => {
@@ -16,7 +18,9 @@ const Search = () => {
     setSearchText(e.target.value);
   };
 
-  const onAmountChange = () => {};
+  const onAmountChange = (e) => {
+    setAmount(e.target.value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,7 +37,7 @@ const Search = () => {
     } catch (error) {
       console.log(error);
     }
-  }, [searchText]);
+  }, [searchText, amount]);
 
   return (
     <div>
@@ -44,7 +48,6 @@ const Search = () => {
         value={searchText}
         onChange={onTextChange}
       />
-      <br />
       <TextField
         name="amount"
         select
