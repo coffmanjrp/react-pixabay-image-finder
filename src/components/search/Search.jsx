@@ -7,9 +7,10 @@ import ImageResults from '../image-results/ImageResults';
 const Search = () => {
   const [searchText, setSearchText] = useState('');
   const [amount, setAmount] = useState(15);
-  const [apiUrl, setApiUrl] = useState('https://pixabay.com/api');
-  const [apiKey, setApiKey] = useState(process.env.REACT_APP_API_KEY);
   const [images, setImages] = useState([]);
+
+  const apiUrl = 'https://pixabay.com/api';
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   const selectOptions = [5, 10, 15, 30, 50];
 
