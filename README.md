@@ -2,7 +2,7 @@
 
 A Pixabay image finder. Data provided by [Pixabay API](https://pixabay.com/api/docs/).
 
-[DEMO](https://react-movie-app-mauve.vercel.app/)
+[DEMO](https://boring-bose-a30a6b.netlify.app/)
 
 ![Pixabay Image Finder](https://res.cloudinary.com/coffmanjrp-dev/image/upload/v1643327432/coffmanjrp.io/pixabay_image_finder_824172d3c9.png)
 
